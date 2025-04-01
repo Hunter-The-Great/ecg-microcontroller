@@ -127,6 +127,7 @@ SUBDIRS := \
 . \
 Application \
 Drivers/NV \
+Libraries \
 OAD \
 Profiles \
 Startup \

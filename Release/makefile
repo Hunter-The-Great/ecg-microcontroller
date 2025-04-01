@@ -16,6 +16,10 @@ ORDERED_OBJS += \
 "./Application/rcosc_calibration.o" \
 "./Drivers/NV/crc.o" \
 "./Drivers/NV/nvocmp.o" \
+"./Libraries/adxl362.o" \
+"./Libraries/no_os_alloc.o" \
+"./Libraries/no_os_mutex.o" \
+"./Libraries/no_os_spi.o" \
 "./OAD/crc32.o" \
 "./OAD/flash_interface_ext_rtos_NVS.o" \
 "./OAD/oad.o" \
@@ -50,6 +54,7 @@ RMDIR := rm -rf
 -include subdir_vars.mk
 -include Application/subdir_vars.mk
 -include Drivers/NV/subdir_vars.mk
+-include Libraries/subdir_vars.mk
 -include OAD/subdir_vars.mk
 -include Profiles/subdir_vars.mk
 -include Startup/subdir_vars.mk
@@ -59,6 +64,7 @@ RMDIR := rm -rf
 -include subdir_rules.mk
 -include Application/subdir_rules.mk
 -include Drivers/NV/subdir_rules.mk
+-include Libraries/subdir_rules.mk
 -include OAD/subdir_rules.mk
 -include Profiles/subdir_rules.mk
 -include Startup/subdir_rules.mk
@@ -183,8 +189,8 @@ project_zero_LP_CC2651R3SIPA_tirtos7_ticlang.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS
 # Other Targets
 clean:
 	-$(RM) $(GEN_MISC_FILES__QUOTED)$(GEN_FILES__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "syscfg/ti_ble_config.o" "syscfg/ti_radio_config.o" "syscfg/ti_drivers_config.o" "syscfg/ti_sysbios_config.o" "Application/project_zero.o" "Application/rcosc_calibration.o" "Drivers/NV/crc.o" "Drivers/NV/nvocmp.o" "OAD/crc32.o" "OAD/flash_interface_ext_rtos_NVS.o" "OAD/oad.o" "OAD/oad_image_header_app.o" "Profiles/button_service.o" "Profiles/data_service.o" "Profiles/devinfoservice.o" "Profiles/led_service.o" "Startup/UartLog.o" "Startup/main.o" "Startup/osal_icall_ble.o" "Startup/rom_init.o" "common/Util/util.o" "iCall/icall.o" "iCall/icall_cc2650.o" "iCall/icall_user_config.o" "iCallBLE/ble_user_config.o" "iCallBLE/ble_user_config_stack.o" "iCallBLE/icall_api_lite.o" 
-	-$(RM) "syscfg/ti_ble_config.d" "syscfg/ti_radio_config.d" "syscfg/ti_drivers_config.d" "syscfg/ti_sysbios_config.d" "Application/project_zero.d" "Application/rcosc_calibration.d" "Drivers/NV/crc.d" "Drivers/NV/nvocmp.d" "OAD/crc32.d" "OAD/flash_interface_ext_rtos_NVS.d" "OAD/oad.d" "OAD/oad_image_header_app.d" "Profiles/button_service.d" "Profiles/data_service.d" "Profiles/devinfoservice.d" "Profiles/led_service.d" "Startup/UartLog.d" "Startup/main.d" "Startup/osal_icall_ble.d" "Startup/rom_init.d" "common/Util/util.d" "iCall/icall.d" "iCall/icall_cc2650.d" "iCall/icall_user_config.d" "iCallBLE/ble_user_config.d" "iCallBLE/ble_user_config_stack.d" "iCallBLE/icall_api_lite.d" 
+	-$(RM) "syscfg/ti_ble_config.o" "syscfg/ti_radio_config.o" "syscfg/ti_drivers_config.o" "syscfg/ti_sysbios_config.o" "Application/project_zero.o" "Application/rcosc_calibration.o" "Drivers/NV/crc.o" "Drivers/NV/nvocmp.o" "Libraries/adxl362.o" "Libraries/no_os_alloc.o" "Libraries/no_os_mutex.o" "Libraries/no_os_spi.o" "OAD/crc32.o" "OAD/flash_interface_ext_rtos_NVS.o" "OAD/oad.o" "OAD/oad_image_header_app.o" "Profiles/button_service.o" "Profiles/data_service.o" "Profiles/devinfoservice.o" "Profiles/led_service.o" "Startup/UartLog.o" "Startup/main.o" "Startup/osal_icall_ble.o" "Startup/rom_init.o" "common/Util/util.o" "iCall/icall.o" "iCall/icall_cc2650.o" "iCall/icall_user_config.o" "iCallBLE/ble_user_config.o" "iCallBLE/ble_user_config_stack.o" "iCallBLE/icall_api_lite.o" 
+	-$(RM) "syscfg/ti_ble_config.d" "syscfg/ti_radio_config.d" "syscfg/ti_drivers_config.d" "syscfg/ti_sysbios_config.d" "Application/project_zero.d" "Application/rcosc_calibration.d" "Drivers/NV/crc.d" "Drivers/NV/nvocmp.d" "Libraries/adxl362.d" "Libraries/no_os_alloc.d" "Libraries/no_os_mutex.d" "Libraries/no_os_spi.d" "OAD/crc32.d" "OAD/flash_interface_ext_rtos_NVS.d" "OAD/oad.d" "OAD/oad_image_header_app.d" "Profiles/button_service.d" "Profiles/data_service.d" "Profiles/devinfoservice.d" "Profiles/led_service.d" "Startup/UartLog.d" "Startup/main.d" "Startup/osal_icall_ble.d" "Startup/rom_init.d" "common/Util/util.d" "iCall/icall.d" "iCall/icall_cc2650.d" "iCall/icall_user_config.d" "iCallBLE/ble_user_config.d" "iCallBLE/ble_user_config_stack.d" "iCallBLE/icall_api_lite.d" 
 	-$(RMDIR) $(GEN_MISC_DIRS__QUOTED)
 	-@echo 'Finished clean'
 	-@echo ' '
